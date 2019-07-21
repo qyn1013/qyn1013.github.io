@@ -76,21 +76,27 @@
     
         <article class="post-abstract">
             <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/07/14/es6/"></a></h2>
+                <h2><a class="post-title-link" href="/2019/07/22/es6/">es6</a></h2>
             </div>
             <div class="post-meta">
-                <span class="post-time">2019-07-14</span>
+                <span class="post-time">2019-07-22</span>
                 
             </div>
             <div class="post-content">
                 
-                    <hr>
-<p>  title: es6<br>  date: 2019-07-14 21:49:30</p>
-<h2 id="tags-Internship-knowledge"><a href="#tags-Internship-knowledge" class="headerlink" title="  tags: Internship knowledge"></a>  tags: Internship knowledge</h2><p>  安装Babel(能把原始代码用的箭头函数转为普通函数)</p>
+                    <p>安装Babel(能把原始代码用的箭头函数转为普通函数)</p>
 <blockquote>
-<p>$ npm install –save-dev @babel/core<br>
+<p>$ npm install –save-dev @babel/core</p>
+</blockquote>
+<p>1.声明变量</p>
+<blockquote>
+<p>1.let  声明的变量只在let所在的代码块内有效;声明的变量一定要在声明后使用；所声明的变量不再受外部影响；不允许相同作用域内重复声明同一个变量</p>
+<blockquote>
+<p>//重新声明参数<br>function func(arg) {<br>  let arg;<br>}<br>func() // 报错<br>function func(arg) {<br>  {<br>    let arg;<br>  }<br>}<br>func() // 不报错</p>
+</blockquote>
+</blockquote>
                     <div class="read-more">
-                        <a href="/2019/07/14/es6/" class="read-more-link">
+                        <a href="/2019/07/22/es6/" class="read-more-link">
                             阅读全文
                             <i class="iconfont icon-readmore"></i>
                         </a>
