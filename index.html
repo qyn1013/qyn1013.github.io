@@ -76,6 +76,83 @@
     
         <article class="post-abstract">
             <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/08/04/React/">React</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-08-04</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <p><strong>1.JSX</strong></p>
+<blockquote>
+<p>在属性中嵌入JavaScript表达式时，仅使用引号（对于字符串）或大括号（对于表达式），对于同一属性不能同时使用引号和大括号</p>
+</blockquote>
+<blockquote>
+<p>使用camelCase定义属性的名称</p>
+</blockquote>
+                    <div class="read-more">
+                        <a href="/2019/08/04/React/" class="read-more-link">
+                            阅读全文
+                            <i class="iconfont icon-readmore"></i>
+                        </a>
+                    </div>
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/08/04/Jest/">Jest</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-08-04</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <p><strong>单元测试一般包含：</strong></p>
+<ul>
+<li>被测试的对象是什么</li>
+<li>要测试该对象的什么功能</li>
+<li>实际得到的结果</li>
+<li>期望的结果</li>
+<li>mock/spy</li>
+</ul>
+<p><strong><em>具体又分为准备阶段（构造参数、创建spy）、执行阶段、断言阶段（用实际得到的结果与期望的结果比较以判断该测试是否正常）、清理阶段</em></strong></p>
+<p><strong>常用的匹配器如下：</strong></p>
+<ul>
+<li>toBe 使用 Object.is 判断是否严格相等。</li>
+<li>toEqual 递归检查对象或数组的每个字段。</li>
+<li>toBeNull 只匹配 null。</li>
+<li>toBeUndefined 只匹配 undefined。</li>
+<li>toBeDefined 只匹配非 undefined。</li>
+<li>toBeTruthy 只匹配真。</li>
+<li>toBeFalsy 只匹配假。</li>
+<li>toBeGreaterThan 实际值大于期望。</li>
+<li>toBeGreaterThanOrEqual 实际值大于或等于期望值</li>
+<li>toBeLessThan 实际值小于期望值。</li>
+<li>toBeLessThanOrEqual 实际值小于或等于期望值。</li>
+<li>toBeCloseTo 比较浮点数的值，避免误差。</li>
+<li>toMatch 正则匹配。</li>
+<li>toContain 判断数组中是否包含指定项。</li>
+<li>.toHaveProperty(keyPath, value) 判断对象中是否包含指定属性。</li>
+<li>toThrow 判断是否抛出指定的异常。</li>
+<li>toBeInstanceOf 判断对象是否是某个类的实例，底层使用 instanceof。</li>
+</ul>
+<p><strong>钩子函数</strong></p>
+<ul>
+<li>beforeAll() 和 afterAll() 会在所有测试用例之前和所有测试用例之后执行一次。</li>
+<li>beforeEach() 和 afterEach() 会在每个测试用例之前和之后执行。</li>
+</ul>
+<p><a href="https://loveky.github.io/2018/05/17/unit-test-and-jest/" target="_blank" rel="noopener">https://loveky.github.io/2018/05/17/unit-test-and-jest/</a><br><a href="http://www.51testing.com/html/53/15150753-4457654.html" target="_blank" rel="noopener">http://www.51testing.com/html/53/15150753-4457654.html</a></p>
+
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
                 <h2><a class="post-title-link" href="/2019/07/22/es6/">es6</a></h2>
             </div>
             <div class="post-meta">
@@ -87,13 +164,6 @@
                     <p>安装Babel(能把原始代码用的箭头函数转为普通函数)</p>
 <blockquote>
 <p>$ npm install –save-dev @babel/core</p>
-</blockquote>
-<p>1.声明变量</p>
-<blockquote>
-<p>1.let  声明的变量只在let所在的代码块内有效;声明的变量一定要在声明后使用；所声明的变量不再受外部影响；不允许相同作用域内重复声明同一个变量</p>
-<blockquote>
-<p>//重新声明参数<br>function func(arg) {<br>  let arg;<br>}<br>func() // 报错<br>function func(arg) {<br>  {<br>    let arg;<br>  }<br>}<br>func() // 不报错</p>
-</blockquote>
 </blockquote>
                     <div class="read-more">
                         <a href="/2019/07/22/es6/" class="read-more-link">
@@ -107,7 +177,7 @@
     
         <article class="post-abstract">
             <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/07/14/git/">git</a></h2>
+                <h2><a class="post-title-link" href="/2019/07/14/git/">git 常用命令</a></h2>
             </div>
             <div class="post-meta">
                 <span class="post-time">2019-07-14</span>
@@ -115,10 +185,10 @@
             </div>
             <div class="post-content">
                 
-                    <p><strong>常用命令</strong></p>
-<p>1.创建版本库</p>
+                    <ol>
+<li><p>创建版本库</p>
 <blockquote>
-<p>mkdir ning<br>cd ning<br>pwd //查看当前路径</p>
+<p>mkdir ning<br>cd ning<br>pwd // 查看当前路径</p>
 </blockquote>
                     <div class="read-more">
                         <a href="/2019/07/14/git/" class="read-more-link">

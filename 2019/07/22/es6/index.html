@@ -94,56 +94,78 @@
 <blockquote>
 <p>$ npm install –save-dev @babel/core</p>
 </blockquote>
-<p>1.声明变量</p>
-<blockquote>
-<p>1.let  声明的变量只在let所在的代码块内有效;声明的变量一定要在声明后使用；所声明的变量不再受外部影响；不允许相同作用域内重复声明同一个变量</p>
-<blockquote>
-<p>//重新声明参数<br>function func(arg) {<br>  let arg;<br>}<br>func() // 报错<br>function func(arg) {<br>  {<br>    let arg;<br>  }<br>}<br>func() // 不报错</p>
-</blockquote>
-</blockquote>
 <a id="more"></a>
+
+<ol>
+<li>声明变量<ul>
+<li>let  声明的变量只在let所在的代码块内有效;声明的变量一定要在声明后使用；所声明的变量不再受外部影响；不允许相同作用域内重复声明同一个变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//重新声明参数  </span><br><span class="line">&gt;&gt;function func(arg) &#123;</span><br><span class="line">  let arg;</span><br><span class="line">&#125;</span><br><span class="line">func() // 报错</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;function func(arg) &#123;</span><br><span class="line">  &#123;</span><br><span class="line">    let arg;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">func() // 不报错</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>var  声明的变量在全局范围内有效</p>
+</li>
+<li><p>const  声明只读的常量，声明的常量的值不能改变（变量指向的内存地址所保存的数据不得改动）。一旦声明变量就必须立即初始化。声明后用，不可重复声明。</p>
+</li>
+</ul>
+<ol start="2">
+<li>变量的解构赋值<br>模式匹配赋值（解构失败，变量值为undefined）</li>
+</ol>
 <blockquote>
-<p>2.var  声明的变量在全局范围内有效</p>
-<p>3.const  声明只读的常量，声明的常量的值不能改变（变量指向的内存地址所保存的数据不得改动）。一旦声明变量就必须立即初始化。声明后用，不可重复声明。</p>
-</blockquote>
-<p>2.变量的解构赋值<br>模式匹配赋值（解构失败，变量值为undefined）</p>
 <p>不完全解构</p>
-<blockquote>
-<p>let [a, [b], d] = [1, [2, 3], 4];<br>a // 1<br>b // 2<br>d // 4</p>
 </blockquote>
-<p>等号的右边要是数组（可遍历的结构）</p>
-<p>指定默认值时，只有当一个数组成员等于undefined，默认值才生效</p>
-<blockquote>
-<p>let [x = 1] = [undefined];<br>x // 1<br>let [x = 1] = [null];<br>x // null</p>
-</blockquote>
-<p>变量声明、函数参数、赋值语句的模式不能带有圆括号</p>
-<p>3.字符串</p>
-<blockquote>
-<p>String.fromCodePoint()方法，可以识别大于0xFFFF的字符，如果String.fromCodePoint方法有多个参数，则它们会被合并成一个字符串返回。fromCodePoint方法定义在String对象上</p>
-</blockquote>
-<blockquote>
-<p>includes()：返回布尔值，表示是否找到了参数字符串。<br>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。<br>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
-</blockquote>
-<blockquote>
-<p>repeat方法返回一个新字符串，表示将原字符串重复n次。参数为小数则取整</p>
-</blockquote>
-<blockquote>
-<p>trimStart()消除字符串头部的空格<br>trimEnd()消除尾部的空格。</p>
-</blockquote>
-<p>4.数值</p>
-<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let [a, [b], d] = [1, [2, 3], 4];</span><br><span class="line">a // 1</span><br><span class="line">b // 2</span><br><span class="line">d // 4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>等号的右边要是数组（可遍历的结构）</p>
+</li>
+<li><p>指定默认值时，只有当一个数组成员等于undefined，默认值才生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;let [x = 1] = [undefined];</span><br><span class="line">x // 1</span><br><span class="line">let [x = 1] = [null];</span><br><span class="line">x // null</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量声明、函数参数、赋值语句的模式不能带有圆括号</p>
+</li>
+</ul>
+<ol start="3">
+<li>字符串</li>
+</ol>
+<ul>
+<li><p>String.fromCodePoint()方法，可以识别大于0xFFFF的字符，如果String.fromCodePoint方法有多个参数，则它们会被合并成一个字符串返回。fromCodePoint方法定义在String对象上</p>
+</li>
+<li><p>includes()：返回布尔值，表示是否找到了参数字符串。<br>startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。<br>endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</p>
+</li>
+<li><p>repeat方法返回一个新字符串，表示将原字符串重复n次。参数为小数则取整</p>
+</li>
+<li><p>trimStart()消除字符串头部的空格</p>
+</li>
+<li><p>trimEnd()消除尾部的空格。</p>
+</li>
+</ul>
+<ol start="4">
+<li>数值<blockquote>
 <p>Math.trunc方法用于去除一个数的小数部分，返回整数部分</p>
 </blockquote>
+</li>
+</ol>
 <blockquote>
 <p>Math.sign方法用来判断一个数到底是正数、负数、还是零</p>
 </blockquote>
-<p>5.函数</p>
+<ol start="5">
+<li><p>函数</p>
 <blockquote>
 <p>指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数</p>
 </blockquote>
-<p>6.数组</p>
+</li>
+<li><p>数组</p>
 <blockquote>
 <p>copyWithin()方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
 <p>Array.prototype.copyWithin(target, start = 0, end = this.length) //如果start、end为负值，表示从末尾开始计算。target为负值表示倒数</p>
 </blockquote>
 <blockquote>
@@ -152,54 +174,83 @@
 <blockquote>
 <p>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值.<br>indexOf方法的含义是找到参数值的第一个出现位置，要去比较是否不等于-1，内部使用严格相等运算符（===）进行判断，会导致对NaN的误判。</p>
 </blockquote>
-<p>7.属性的遍历（枚举：列出某些有穷序列集的所有成员的程序，或者是一种特定类型对象的计数）</p>
-<blockquote>
+<ol start="7">
+<li>属性的遍历（枚举：列出某些有穷序列集的所有成员的程序，或者是一种特定类型对象的计数）<blockquote>
 <p>for…in循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）</p>
 </blockquote>
+</li>
+</ol>
 <blockquote>
 <p>Object.keys返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名</p>
 </blockquote>
 <blockquote>
 <p>Object.getOwnPropertyNames返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名</p>
 </blockquote>
-<p>8.Symbol：可以保证不会与其他属性名产生冲突，不能与其他类型的值进行运算</p>
-<blockquote>
+<ol start="8">
+<li>Symbol：可以保证不会与其他属性名产生冲突，不能与其他类型的值进行运算<blockquote>
 <p>Symbol.match<br>Symbol.replace<br>Symbol.search<br>Symbol.split</p>
 </blockquote>
-<p>9.Set可以去除字符串里面的重复字符<br>Set结构的实例属性：</p>
+</li>
+</ol>
+<p>9.Set可以去除字符串里面的重复字符 </p>
+<ul>
+<li><p>Set结构的实例属性：</p>
 <blockquote>
 <p>Set.prototype.constructor：构造函数，默认就是Set函数。<br>Set.prototype.size：返回Set实例的成员总数。</p>
 </blockquote>
-<p>Set实例的方法</p>
+</li>
+<li><p>Set实例的方法</p>
 <blockquote>
-<p>1.操作方法（操作数据)<br>Set.prototype.add(value)：添加某个值，返回 Set 结构本身。<br>Set.prototype.delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。<br>Set.prototype.has(value)：返回一个布尔值，表示该值是否为Set的成员。<br>Set.prototype.clear()：清除所有成员，没有返回值。</p>
+<p>操作方法（操作数据）<br>Set.prototype.add(value)：添加某个值，返回 Set 结构本身。<br>Set.prototype.delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。<br>Set.prototype.has(value)：返回一个布尔值，表示该值是否为Set的成员。<br>Set.prototype.clear()：清除所有成员，没有返回值。</p>
 </blockquote>
+</li>
+</ul>
 <blockquote>
-<p>2.遍历方法（遍历成员）<br>Set.prototype.keys()：返回键名的遍历器<br>Set.prototype.values()：返回键值的遍历器<br>Set.prototype.entries()：返回键值对的遍历器<br>Set.prototype.forEach()：使用回调函数遍历每个成员</p>
+<p>遍历方法（遍历成员）<br>Set.prototype.keys()：返回键名的遍历器<br>Set.prototype.values()：返回键值的遍历器<br>Set.prototype.entries()：返回键值对的遍历器<br>Set.prototype.forEach()：使用回调函数遍历每个成员</p>
 </blockquote>
-<p><strong><em>Array.from方法可以将 Set 结构转为数组。</em></strong></p>
-<p>10.Map结构的属性和操作方法</p>
-<blockquote>
-<p>size//返回Map结构的成员总数<br>Map.prototype.set(key,value)//生成键，设置键名和键值，然后返回Map结构<br>Map.prototype.get(key)//读取key对应的键值<br>Map.prototype.has(key)//返回布尔值，表示某个键是否在当前Map对象中<br>Map.prototype.delete(key)//删除成功返回true<br>Map.prototype.clear()//清除所有成员，没有返回值</p>
+<ul>
+<li><strong><em>Array.from方法可以将 Set 结构转为数组。</em></strong></li>
+</ul>
+<ol start="10">
+<li>Map结构的属性和操作方法<blockquote>
+<p>size // 返回Map结构的成员总数<br>Map.prototype.set(key,value) // 生成键，设置键名和键值，然后返回Map结构<br>Map.prototype.get(key) // 读取key对应的键值<br>Map.prototype.has(key) // 返回布尔值，表示某个键是否在当前Map对象中<br>Map.prototype.delete(key) // 删除成功返回true<br>Map.prototype.clear() // 清除所有成员，没有返回值</p>
 </blockquote>
-<p><strong>遍历方法</strong>（Map的遍历顺序就是插入顺序）</p>
-<blockquote>
+</li>
+</ol>
+<ul>
+<li><strong>遍历方法</strong>（Map的遍历顺序就是插入顺序）<blockquote>
 <p>Map.prototype.keys()：返回键名的遍历器<br>Map.prototype.values()：返回键值的遍历器<br>Map.prototype.entries()：返回所有成员的遍历器<br>Map.prototype.forEach()：遍历Map的所有成员</p>
 </blockquote>
-<p>11.Promise是一个对象，也是一个构造函数</p>
-<p>Promise 对象后面要跟catch方法,可以处理Promise内部发生的错误。catch方法返回的还是一个 Promise 对象，后面还可以接着调用then方法。</p>
-<p>为异步操作提供统一接口</p>
-<p>Promise对象通过自身的状态，来控制异步操作：<br>1.异步未完成（pending）<br>2.异步成功（fulfilled）,传回value，状态变为fulfilled<br>3.异步失败（rejected)，抛出error，状态变为rejected</p>
-<p>Promise实例的then方法，用来添加回调函数</p>
-<p>12.async:返回值是Promise</p>
-<p>async函数返回一个 Promise 对象，可以使用then方法添加回调函数。当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。</p>
-<p>await命令后面的 Promise 对象如果变为reject状态，则reject的参数会被catch方法的回调函数接收到。<br>任何一个await语句后面的 Promise 对象变为reject状态，那么整个async函数都会中断执行。<br>如果await后面的异步操作出错，那么等同于async函数返回的 Promise 对象被reject。</p>
+</li>
+</ul>
+<ol start="11">
+<li>Promise是一个对象，也是一个构造函数</li>
+</ol>
+<ul>
+<li><p>Promise 对象后面要跟catch方法,可以处理Promise内部发生的错误。catch方法返回的还是一个 Promise 对象，后面还可以接着调用then方法。</p>
+</li>
+<li><p>为异步操作提供统一接口</p>
+</li>
+<li><p>Promise对象通过自身的状态，来控制异步操作：  </p>
+</li>
+</ul>
+<p>1.异步未完成（pending）<br>2.异步成功（fulfilled）,传回value，状态变为fulfilled<br>3.异步失败（rejected)，抛出error，状态变为rejected</p>
+<ul>
+<li>Promise实例的then方法，用来添加回调函数</li>
+</ul>
+<p><strong>12. async:返回值是Promise</strong></p>
+<ul>
+<li><p>async函数返回一个 Promise 对象，可以使用then方法添加回调函数。当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。</p>
+</li>
+<li><p>await命令后面的 Promise 对象如果变为reject状态，则reject的参数会被catch方法的回调函数接收到。<br>任何一个await语句后面的 Promise 对象变为reject状态，那么整个async函数都会中断执行。<br>如果await后面的异步操作出错，那么等同于async函数返回的 Promise 对象被reject。</p>
+</li>
+</ul>
 
         </div>
         
         <div class="post-tag">
             
-            <a class="tag" href="/tags/internship-knowledge/" title="internship knowledge">internship knowledge</a>
+            <a class="tag" href="/tags/Internship-Knowledge/" title="Internship Knowledge">Internship Knowledge</a>
             
         </div>
         
@@ -208,9 +259,15 @@
 <div class="paginator">
     
         
+            <a class="prev" href="/2019/08/04/Jest/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">Jest</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
         
             <a class="next" href="/2019/07/14/git/">
-                <span class="nav-default">git</span>
+                <span class="nav-default">git 常用命令</span>
                 <span class="nav-mobile">下一篇</span>
                 <i class="iconfont icon-next"></i>
             </a>

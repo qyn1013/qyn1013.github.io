@@ -75,9 +75,9 @@
         <div class="posts">
     <article class="post-whole">
         <div class="post-title">
-            <h2 class="title">git 常用命令</h2>
+            <h2 class="title">Jest</h2>
             <div class="post-meta">
-                <span class="post-time">2019-07-14</span>
+                <span class="post-time">2019-08-04</span>
                 
                 <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
             </div>
@@ -90,49 +90,41 @@
     </div>
 </div>
         <div class="post-content">
-            <ol>
-<li><p>创建版本库</p>
-<blockquote>
-<p>mkdir ning<br>cd ning<br>pwd // 查看当前路径</p>
-</blockquote>
-<a id="more"></a>
-</li>
-<li><p>把这个目录变成Git可以管理的仓库</p>
-<blockquote>
-<p>git init // 目录.git用来跟踪管理版本库，如果没看到则默认是隐藏的，用ls -ah可以看到</p>
-</blockquote>
-</li>
-<li><p>把文件添加到版本库</p>
-<blockquote>
-<p>git add ning.txt<br>git commit -m “message” // 提交文件到仓库，-m后输入本次提交的说明，可以多次add不同文件，commit可以一次提交多个文件</p>
-</blockquote>
-</li>
-<li><p>查看修改结果</p>
-<blockquote>
-<p>git status // 可以随时掌握工作区的状态<br>git diff // 查看修改内容</p>
-</blockquote>
-</li>
-<li><p>撤销修改</p>
-<blockquote>
-<p>git reset //回退版本</p>
-</blockquote>
-</li>
-<li><p>分支</p>
-<blockquote>
-<p>git checkout -b //创建+切换分支<br>git branch //查看分支<br>git checkout master //分支做完，切换回master<br>git merge //将分支的内容融合到master上，检测有没有冲突，然后在mater分支创建一个记录合并结果的新节点<br>git rebase //将分支的内容apply 到或者应用到或者说将分支的头指针重定向到当前 HEAD 位置<br>git cherry-pick //将一个分支的内容遴选到另一个分支（类似于复制）</p>
-</blockquote>
-</li>
-<li><p>把本地分支提交到远程库</p>
-<blockquote>
-<p>git push origin master //master是主分支</p>
-</blockquote>
-</li>
-<li><p>把最新的提交拿下来</p>
-<blockquote>
-<p>git pull</p>
-</blockquote>
-</li>
-</ol>
+            <p><strong>单元测试一般包含：</strong></p>
+<ul>
+<li>被测试的对象是什么</li>
+<li>要测试该对象的什么功能</li>
+<li>实际得到的结果</li>
+<li>期望的结果</li>
+<li>mock/spy</li>
+</ul>
+<p><strong><em>具体又分为准备阶段（构造参数、创建spy）、执行阶段、断言阶段（用实际得到的结果与期望的结果比较以判断该测试是否正常）、清理阶段</em></strong></p>
+<p><strong>常用的匹配器如下：</strong></p>
+<ul>
+<li>toBe 使用 Object.is 判断是否严格相等。</li>
+<li>toEqual 递归检查对象或数组的每个字段。</li>
+<li>toBeNull 只匹配 null。</li>
+<li>toBeUndefined 只匹配 undefined。</li>
+<li>toBeDefined 只匹配非 undefined。</li>
+<li>toBeTruthy 只匹配真。</li>
+<li>toBeFalsy 只匹配假。</li>
+<li>toBeGreaterThan 实际值大于期望。</li>
+<li>toBeGreaterThanOrEqual 实际值大于或等于期望值</li>
+<li>toBeLessThan 实际值小于期望值。</li>
+<li>toBeLessThanOrEqual 实际值小于或等于期望值。</li>
+<li>toBeCloseTo 比较浮点数的值，避免误差。</li>
+<li>toMatch 正则匹配。</li>
+<li>toContain 判断数组中是否包含指定项。</li>
+<li>.toHaveProperty(keyPath, value) 判断对象中是否包含指定属性。</li>
+<li>toThrow 判断是否抛出指定的异常。</li>
+<li>toBeInstanceOf 判断对象是否是某个类的实例，底层使用 instanceof。</li>
+</ul>
+<p><strong>钩子函数</strong></p>
+<ul>
+<li>beforeAll() 和 afterAll() 会在所有测试用例之前和所有测试用例之后执行一次。</li>
+<li>beforeEach() 和 afterEach() 会在每个测试用例之前和之后执行。</li>
+</ul>
+<p><a href="https://loveky.github.io/2018/05/17/unit-test-and-jest/" target="_blank" rel="noopener">https://loveky.github.io/2018/05/17/unit-test-and-jest/</a><br><a href="http://www.51testing.com/html/53/15150753-4457654.html" target="_blank" rel="noopener">http://www.51testing.com/html/53/15150753-4457654.html</a></p>
 
         </div>
         
@@ -147,15 +139,15 @@
 <div class="paginator">
     
         
-            <a class="prev" href="/2019/07/22/es6/">
+            <a class="prev" href="/2019/08/04/React/">
                 <i class="iconfont icon-prev"></i>
-                <span class="nav-default">es6</span>
+                <span class="nav-default">React</span>
                 <span class="nav-mobile">上一篇</span>
             </a>
         
         
-            <a class="next" href="/2019/07/14/hello-world/">
-                <span class="nav-default">Hello World</span>
+            <a class="next" href="/2019/07/22/es6/">
+                <span class="nav-default">es6</span>
                 <span class="nav-mobile">下一篇</span>
                 <i class="iconfont icon-next"></i>
             </a>

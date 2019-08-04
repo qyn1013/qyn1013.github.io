@@ -75,9 +75,9 @@
         <div class="posts">
     <article class="post-whole">
         <div class="post-title">
-            <h2 class="title">git 常用命令</h2>
+            <h2 class="title">React</h2>
             <div class="post-meta">
-                <span class="post-time">2019-07-14</span>
+                <span class="post-time">2019-08-04</span>
                 
                 <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
             </div>
@@ -90,50 +90,87 @@
     </div>
 </div>
         <div class="post-content">
-            <ol>
-<li><p>创建版本库</p>
+            <p><strong>1.JSX</strong></p>
 <blockquote>
-<p>mkdir ning<br>cd ning<br>pwd // 查看当前路径</p>
+<p>在属性中嵌入JavaScript表达式时，仅使用引号（对于字符串）或大括号（对于表达式），对于同一属性不能同时使用引号和大括号</p>
+</blockquote>
+<blockquote>
+<p>使用camelCase定义属性的名称</p>
 </blockquote>
 <a id="more"></a>
-</li>
-<li><p>把这个目录变成Git可以管理的仓库</p>
+<p><strong>2.元素渲染</strong></p>
 <blockquote>
-<p>git init // 目录.git用来跟踪管理版本库，如果没看到则默认是隐藏的，用ls -ah可以看到</p>
+<p>setInterval（）方法重复调用一个函数或执行一个代码段，返回一个intervalID</p>
 </blockquote>
-</li>
-<li><p>把文件添加到版本库</p>
 <blockquote>
-<p>git add ning.txt<br>git commit -m “message” // 提交文件到仓库，-m后输入本次提交的说明，可以多次add不同文件，commit可以一次提交多个文件</p>
+<p>React只更新它需要更新的部分</p>
 </blockquote>
-</li>
-<li><p>查看修改结果</p>
 <blockquote>
-<p>git status // 可以随时掌握工作区的状态<br>git diff // 查看修改内容</p>
+<p>通过调用ReactDOM.render()来修改想要渲染的元素</p>
 </blockquote>
-</li>
-<li><p>撤销修改</p>
+<p><strong>3.组件&amp;Props</strong></p>
 <blockquote>
-<p>git reset //回退版本</p>
+<p>接受任意的入参（“props”），返回用于描述页面展示内容发React元素</p>
 </blockquote>
-</li>
-<li><p>分支</p>
 <blockquote>
-<p>git checkout -b //创建+切换分支<br>git branch //查看分支<br>git checkout master //分支做完，切换回master<br>git merge //将分支的内容融合到master上，检测有没有冲突，然后在mater分支创建一个记录合并结果的新节点<br>git rebase //将分支的内容apply 到或者应用到或者说将分支的头指针重定向到当前 HEAD 位置<br>git cherry-pick //将一个分支的内容遴选到另一个分支（类似于复制）</p>
+<p>组件名称开头大写，以小写字母开头的组件视为DOM标签</p>
 </blockquote>
-</li>
-<li><p>把本地分支提交到远程库</p>
 <blockquote>
-<p>git push origin master //master是主分支</p>
+<p>Props 只读性,组件使用函数声明和通过class声明都不能修改自身的props</p>
 </blockquote>
-</li>
-<li><p>把最新的提交拿下来</p>
+<p><strong>4.State&amp;生命周期</strong></p>
+<p><a href="https://www.runoob.com/react/react-component-life-cycle.html" target="_blank" rel="noopener">https://www.runoob.com/react/react-component-life-cycle.html</a></p>
+<p><img src="evernotecid://CF1A9C73-9860-4FA3-B007-6E4DF5907C4B/appyinxiangcom/25369713/ENResource/p1" alt="c9700e9b4065f84249903965a7e7ec5c.png"></p>
 <blockquote>
-<p>git pull</p>
+<p>componentWillMount():组件即将被渲染到页面之前出发，可以进行开启定时器、向服务器发送请求等操作</p>
+<p>render():组件渲染</p>
+<p>componentDidMount():组件已经被渲染到页面中后触发：可以进行DOM相关的操作</p>
+<p><strong><em>运行中阶段</em></strong><br>componentWillReceiveProps()：组件接收到属性时触发<br>shouldComponentUpdate()：组件收到新属性或组件状态发生改变时触发（首次渲染不会被触发）</p>
 </blockquote>
-</li>
-</ol>
+<blockquote>
+<p>state是私有的，完全受控于当前组件</p>
+</blockquote>
+<blockquote>
+<p>componentDidMount():”挂载（mount）”<br>componentWillUnmount():”卸载（umount）”</p>
+</blockquote>
+<blockquote>
+<p><em>setState()：时刻更新组件state</em><br>1.不要直接修改State，构造函数是唯一可以给this.state赋值的地方</p>
+<p>2.可能是异步更新,让 setState() 接收一个函数而不是一个对象。这个函数用上一个 state 作为第一个参数，将此次更新被应用时的 props 做为第二个参数</p>
+<p>3.State更新会被合并，当调用setState()时，React会把所提供的对象合并到当前state</p>
+</blockquote>
+<p><strong>6.Key</strong></p>
+<blockquote>
+<p>一个元素的key最好是这个元素拥有的一个独一无二的字符串。<br>如果用index作为key值，会导致性能变差</p>
+<p>如果提取出一个listitem组件，应该把key放在数组中的<listitem>元素上，而不是ListItem组件中的<code>&lt;li&gt;</code>元素上</listitem></p>
+</blockquote>
+<p><strong><em>判断数据是否属于state</em></strong></p>
+<blockquote>
+<p>是否由父组件通过props传递而来的<br>是否随事件的推移保持不变<br>能否根据其他state或props计算出该数据的值</p>
+</blockquote>
+<p><strong><em>任何可变数据应该只有一个对应的唯一的“数据源”</em></strong></p>
+<pre><code>class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
 
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;You clicked {this.state.count} times&lt;/p&gt;
+        &lt;button onClick={() =&gt; this.setState({ count: this.state.count + 1 })}&gt;
+          Click me
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre><p>函数组件：</p>
+<pre><code>const Example = (props) =&gt; {
+  // 你可以在这使用 Hook
+  return &lt;div /&gt;;
+}</code></pre>
         </div>
         
         <div class="post-tag">
@@ -147,15 +184,9 @@
 <div class="paginator">
     
         
-            <a class="prev" href="/2019/07/22/es6/">
-                <i class="iconfont icon-prev"></i>
-                <span class="nav-default">es6</span>
-                <span class="nav-mobile">上一篇</span>
-            </a>
         
-        
-            <a class="next" href="/2019/07/14/hello-world/">
-                <span class="nav-default">Hello World</span>
+            <a class="next" href="/2019/08/04/Jest/">
+                <span class="nav-default">Jest</span>
                 <span class="nav-mobile">下一篇</span>
                 <i class="iconfont icon-next"></i>
             </a>
