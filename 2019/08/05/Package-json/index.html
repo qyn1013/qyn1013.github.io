@@ -72,105 +72,87 @@
 </header>
 <div class="main">
     <div class="content-inner">
-        <section class="archive">
-    
-    <div class="archive-title">
-
-    </div>
-    
-
-    
-    
-        
-            
-            
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">Package.json</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-08-05</span>
                 
-                <div class="archive-timeline">
-                    <h2 class="archive-year">2019</h2>
-                </div>
-            
-            <div class="archive-post">
-                <span class="archive-post-time">
-                    08-04
-                </span>
-                <span class="archive-post-title">
-                    <a class="archive-post-link" href="/2019/08/04/Jest/">Jest</a>
-                </span>
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
             </div>
-        
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <p>package.json定义项目所需的模块和项目的配置信息<br>用npm init初始化一个package.json文件</p>
+<a id="more"></a>
+<ol>
+<li><p>name</p>
+<blockquote>
+<p>1.会作为URL的一部分、命令行的参数或文件夹的名字<br>2.不能以.或_开头，不能有大写字母</p>
+</blockquote>
+</li>
+<li><p>version</p>
+<blockquote>
+<p>必须由node-semver解析，与npm一起作为依赖项</p>
+</blockquote>
+</li>
+<li><p>main</p>
+<blockquote>
+<p>主要字段是模块 ID，是程序的主要入口点,模块被引入后，默认首先加载index.js</p>
+</blockquote>
+</li>
+<li><p>~/^版本号的区别</p>
+<blockquote>
+<p><del>//匹配最近的小版本依赖包，例如</del>5.0.3是安装5.0.x中最新的版本<br>^//匹配最新的大版本依赖包，例如<del>5.0.3是安装5.x.x中最新的版本<br>用</del>来标记版本号</p>
+</blockquote>
+</li>
+<li><p>dependencise和devDependencise的区别</p>
+<blockquote>
+<p>devDependencise只用于本地环境开发<br>dependencise需要发布到生产环境</p>
+</blockquote>
+</li>
+<li><p>semver-语义化版本控制规范</p>
+<blockquote>
+<p>版本号采用X.Y.Z的格式，X,Y,Z为非负整数，每个元素以数值递增<br>npm install –save semver<br>patch//内部修复<br>major//主要更新不兼容，无法在不更改软件的情况下进行升级<br>minor//次要更新向后兼容</p>
+</blockquote>
+</li>
+<li><p>scripts</p>
+<blockquote>
+<p>指定运行脚本命令的npm命令行缩写</p>
+</blockquote>
+</li>
+</ol>
 
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/Internship-Knowledge/" title="Internship Knowledge">Internship Knowledge</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
     
         
-            
-            
-            <div class="archive-post">
-                <span class="archive-post-time">
-                    08-04
-                </span>
-                <span class="archive-post-title">
-                    <a class="archive-post-link" href="/2019/08/04/React/">React</a>
-                </span>
-            </div>
         
-
+            <a class="next" href="/2019/08/04/React/">
+                <span class="nav-default">React</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
     
-        
-            
-            
-            <div class="archive-post">
-                <span class="archive-post-time">
-                    08-05
-                </span>
-                <span class="archive-post-title">
-                    <a class="archive-post-link" href="/2019/08/05/Package-json/">Package.json</a>
-                </span>
-            </div>
-        
-
-    
-        
-            
-            
-            <div class="archive-post">
-                <span class="archive-post-time">
-                    07-22
-                </span>
-                <span class="archive-post-title">
-                    <a class="archive-post-link" href="/2019/07/22/es6/">es6</a>
-                </span>
-            </div>
-        
-
-    
-        
-            
-            
-            <div class="archive-post">
-                <span class="archive-post-time">
-                    07-14
-                </span>
-                <span class="archive-post-title">
-                    <a class="archive-post-link" href="/2019/07/14/git/">git 常用命令</a>
-                </span>
-            </div>
-        
-
-    
-        
-            
-            
-            <div class="archive-post">
-                <span class="archive-post-time">
-                    07-14
-                </span>
-                <span class="archive-post-title">
-                    <a class="archive-post-link" href="/2019/07/14/hello-world/">Hello World</a>
-                </span>
-            </div>
-        
-
-    
-</section>
+</div>
+<div id="comment-container"></div>
     </div>
 </div>
 <footer class="footer-social">
