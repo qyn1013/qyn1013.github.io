@@ -120,33 +120,12 @@
 <li>mock/spy</li>
 </ul>
 <p><strong><em>具体又分为准备阶段（构造参数、创建spy）、执行阶段、断言阶段（用实际得到的结果与期望的结果比较以判断该测试是否正常）、清理阶段</em></strong></p>
-<p><strong>常用的匹配器如下：</strong></p>
-<ul>
-<li>toBe 使用 Object.is 判断是否严格相等。</li>
-<li>toEqual 递归检查对象或数组的每个字段。</li>
-<li>toBeNull 只匹配 null。</li>
-<li>toBeUndefined 只匹配 undefined。</li>
-<li>toBeDefined 只匹配非 undefined。</li>
-<li>toBeTruthy 只匹配真。</li>
-<li>toBeFalsy 只匹配假。</li>
-<li>toBeGreaterThan 实际值大于期望。</li>
-<li>toBeGreaterThanOrEqual 实际值大于或等于期望值</li>
-<li>toBeLessThan 实际值小于期望值。</li>
-<li>toBeLessThanOrEqual 实际值小于或等于期望值。</li>
-<li>toBeCloseTo 比较浮点数的值，避免误差。</li>
-<li>toMatch 正则匹配。</li>
-<li>toContain 判断数组中是否包含指定项。</li>
-<li>.toHaveProperty(keyPath, value) 判断对象中是否包含指定属性。</li>
-<li>toThrow 判断是否抛出指定的异常。</li>
-<li>toBeInstanceOf 判断对象是否是某个类的实例，底层使用 instanceof。</li>
-</ul>
-<p><strong>钩子函数</strong></p>
-<ul>
-<li>beforeAll() 和 afterAll() 会在所有测试用例之前和所有测试用例之后执行一次。</li>
-<li>beforeEach() 和 afterEach() 会在每个测试用例之前和之后执行。</li>
-</ul>
-<p><a href="https://loveky.github.io/2018/05/17/unit-test-and-jest/" target="_blank" rel="noopener">https://loveky.github.io/2018/05/17/unit-test-and-jest/</a><br><a href="http://www.51testing.com/html/53/15150753-4457654.html" target="_blank" rel="noopener">http://www.51testing.com/html/53/15150753-4457654.html</a></p>
-
+                    <div class="read-more">
+                        <a href="/2019/08/04/Jest/" class="read-more-link">
+                            阅读全文
+                            <i class="iconfont icon-readmore"></i>
+                        </a>
+                    </div>
                 
             </div>
         </article>
